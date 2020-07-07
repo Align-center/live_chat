@@ -1,0 +1,79 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    background: rgb(240, 240, 240);
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+article {
+	width: 75%;
+	height: 60vh;
+	margin: 0 auto;
+	padding: .5rem 1rem 0;
+	background: #CCC;
+	border-radius: 2rem 2rem 0 0;
+}
+
+article p span {
+    font-weight: bolder;
+    color: #333;
+}
+
+form {
+	width: 75%;
+	margin: 0 auto;
+	border-top: 1.5px solid #333;
+}
+
+form > * {
+    height: 9vh;
+    border: none;
+    background-color: #CCC;
+    font-size: 1.6rem;
+    outline: none;
+}
+
+#name {
+	width: 9vw;
+	border-radius: 0 0 0 2rem;
+}
+
+#message {
+	width: 59.3vw;
+	border-left: 1.5px solid #333;
+	border-right: 1.5px solid #333;
+}
+
+#button {
+    border-radius: 0 0 2rem 0;
+    transition: all ease .3s;
+}
+
+#button:hover {
+    background-color: rgb(158, 158, 158);
+}
+
+.wizz {
+    animation: shake .7s;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(2deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(-2deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
