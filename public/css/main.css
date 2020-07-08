@@ -26,6 +26,28 @@ article p span {
     color: #333;
 }
 
+.message {
+    position: relative;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.message::before {
+    content: attr(data-time);
+    position: absolute;
+    top: 2rem;
+    background: #999;
+    padding: .3rem .5rem;
+    border-radius: .6rem;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.message:hover::before {
+    visibility: visible;
+}
+
+
 form {
 	width: 75%;
 	margin: 0 auto;

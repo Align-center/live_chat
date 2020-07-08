@@ -50,20 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             $('#messages').append(`<p data-time='${time}' class='message'><span>${name} - </span>${msg}</p>`);
         }
-
-
-        // Start of message time display
-        // $("#messages").on('mouseenter', '.message', function() {
-
-        //     let data = $(this).data('time');
-
-        //     $(this).append(`<small id='time'>${data}</small>`);
-        // }).on('mouseleave', '.message', function() {
-          
-        //     $('#time').remove();
-        // });
-
-    })
+    });
 });
 
 
