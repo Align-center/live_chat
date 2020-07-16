@@ -21,6 +21,15 @@ p {
     display: none;
 }
 
+/*  
+-------------------------------MAIN--------------------
+*/
+
+main {
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
 #connect {
     width: 50%;
     text-align: center;
@@ -40,7 +49,6 @@ p {
 }
 
 #username {
-    width: 9vw;
     margin-right: 1.5rem;
     padding-left: .75rem;
 }
@@ -86,7 +94,7 @@ form {
 }
 
 form > * {
-    height: 6.5vh;
+    padding: 1rem 2rem;
     border: none;
     background-color: #FBFBFB;
     font-size: 1.6rem;
@@ -95,13 +103,14 @@ form > * {
 }
 
 #message {
-    width: 69.3vw;
+    width: 90%;
     padding-left: .75rem;
 }
 
 #button {
-    width: 6.5vh;
-    height: 6.5vh;
+    width: 4.5rem;
+    height: 4.5rem;
+    padding: 0;
     border-radius: 50%;
     margin-left: 1.5rem;
     transition: all ease .3s;
@@ -127,4 +136,31 @@ form > * {
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(-2deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    MEDIA QUERIES    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+
+@media screen and (max-width: 850px) {
+
+    #message {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    #message {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    #message {
+        width: 70%;
+    }
 }

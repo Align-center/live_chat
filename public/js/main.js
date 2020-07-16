@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function playAudio(url) {
 
-        new Audio(`http://127.0.0.1:3000/audio/${url}.mp3`).play();
+        new Audio(`audio/${url}.mp3`).play();
     }
 
     function createMessage(name, time, msg, className) {
