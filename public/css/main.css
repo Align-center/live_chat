@@ -1,7 +1,7 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
-    background: rgb(240, 240, 240);
+    background: rgb(179, 179, 179);
 }
 
 *, *:before, *:after {
@@ -10,6 +10,44 @@ html {
 
 body {
     font-size: 1.6rem;
+    margin-top: 5rem;
+}
+
+p {
+    margin: 0 0 .5rem;
+}
+
+.invisible {
+    display: none;
+}
+
+#connect {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#connect label {
+    display: block;
+    background: none;
+}
+
+#connect input {
+    display: block;
+    margin: .25rem auto .25rem;
+    width: auto;
+    transition: all ease-in-out .4s;
+}
+
+#username {
+    width: 9vw;
+    margin-right: 1.5rem;
+    padding-left: .75rem;
+}
+
+#connect input[type='submit']:hover {
+    background-color: lightsteelblue;
+    color: #666;
 }
 
 article {
@@ -17,69 +55,60 @@ article {
 	height: 60vh;
 	margin: 0 auto;
 	padding: .5rem 1rem 0;
-	background: #CCC;
-	border-radius: 2rem 2rem 0 0;
-}
-
-article p span {
-    font-weight: bolder;
-    color: #333;
+	background: #FBFBFB;
+    border-radius: 0 2rem 2rem;
+    overflow-y: scroll;
 }
 
 .message {
-    position: relative;
+    background-color: lightsteelblue;
     width: -moz-fit-content;
     width: fit-content;
+    padding: 0.3rem 1.5rem;
+    border-radius: 0 1.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+    clear: both;
 }
 
-.message::before {
-    content: attr(data-time);
-    position: absolute;
-    top: 2rem;
-    background: #999;
-    padding: .3rem .5rem;
-    border-radius: .6rem;
-    visibility: hidden;
-    z-index: 1;
+.self {
+    float: right;
+    border-radius: 2rem 0 2rem 2rem;
+    background-color: rgb(89, 177, 150);
 }
 
-.message:hover::before {
-    visibility: visible;
+.names {
+    color: #fff;
 }
-
 
 form {
 	width: 75%;
-	margin: 0 auto;
-	border-top: 1.5px solid #333;
+	margin: 2rem auto;
 }
 
 form > * {
-    height: 9vh;
+    height: 6.5vh;
     border: none;
-    background-color: #CCC;
+    background-color: #FBFBFB;
     font-size: 1.6rem;
     outline: none;
-}
-
-#name {
-	width: 9vw;
-	border-radius: 0 0 0 2rem;
+    border-radius: .5rem;
 }
 
 #message {
-	width: 59.3vw;
-	border-left: 1.5px solid #333;
-	border-right: 1.5px solid #333;
+    width: 69.3vw;
+    padding-left: .75rem;
 }
 
 #button {
-    border-radius: 0 0 2rem 0;
+    width: 6.5vh;
+    height: 6.5vh;
+    border-radius: 50%;
+    margin-left: 1.5rem;
     transition: all ease .3s;
 }
 
 #button:hover {
-    background-color: rgb(158, 158, 158);
+    background-color: rgb(89, 177, 150);
 }
 
 .wizz {

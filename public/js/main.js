@@ -3,24 +3,49 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     var socket = io();
+    var username = '';
 
     function playAudio(url) {
 
         new Audio(`http://127.0.0.1:3000/audio/${url}.mp3`).play();
     }
 
-    $('form').submit(function(e) {
+    function createMessage(name, time, msg, className) {
+
+        if (className == undefined) {
+            className = '';
+        }
+
+        $('#messages').append(`
+            <div class='message  ${className}'>
+                <p class='names'>${name} - <small>${time}</small></p>
+                <p>${msg}</p>
+            </div>
+            `);
+    }
+
+    $('#connect').submit(function(e) {
+        e.preventDefault();
+
+        username = $('#username').val();
+
+        $('#messages').removeClass('invisible');
+        $('#sender').removeClass('invisible');
+        $('#connect').addClass('invisible');
+    });
+
+    $('#sender').submit(function(e) {
         e.preventDefault();
 
         let message = $('#message').val();
-        let name = $('#name').val()
+        let name = username;
 
         let data = [message, name];
 
         socket.emit('chat message', data);
 
         $('#message').val('');
-    })
+    });
 
     socket.on('chat message', function(data) {
 
@@ -48,8 +73,18 @@ document.addEventListener('DOMContentLoaded', function() {
             let seconds = date.getSeconds();
             let time = hours + ':' + minutes + ':' + seconds;
 
-            $('#messages').append(`<p data-time='${time}' class='message'><span>${name} - </span>${msg}</p>`);
+            if (name == username) {
+
+                createMessage(name, time, msg, 'self');
+            }
+            else {
+
+                createMessage(name, time, msg);
+            }
         }
+
+        $('#messages').animate({ scrollTop: $('#messages').height()}, 1000);
+
     });
 });
 

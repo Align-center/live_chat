@@ -9,18 +9,25 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="http://localhost:3000/js/main.js"></script>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
     <link rel="stylesheet" type='text/css' href="http://localhost:3000/css/main.css">
 </head>
 <body>
 
-    <article id='messages'>
+    <form action="" method="post" id='connect'>
+        <label for="username">Entrez votre pseudo : </label>
+        <input type="text" name="username" id="username" placeholder="Name">
+        <input type="submit" value="Se connecter">
+    </form>
+
+    <article id='messages' class="invisible">
 
 
     </article>
-    <form method="POST"><!--
-    --><input type="text" name="name" id="name" placeholder="Name"><!--
+    <form method="POST" class="invisible" id='sender'><!--
     --><input type="text" name="message" id="message"><!--
-    --><button id='button'>Envoyer</button>
+    --><button id='button' class="material-icons">send</button>
     </form>
 </body>
 </html>
