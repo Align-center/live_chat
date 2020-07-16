@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var socket = io();
     var username = '';
+    var messages;
 
     function playAudio(url) {
 
@@ -32,6 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
         $('#messages').removeClass('invisible');
         $('#sender').removeClass('invisible');
         $('#connect').addClass('invisible');
+
+        messages = document.querySelector('#messages');
     });
 
     $('#sender').submit(function(e) {
@@ -83,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        $('#messages').animate({ scrollTop: $('#messages').height()}, 1000);
+        $('#messages').animate({ scrollTop: messages.scrollHeight}, 1000);
 
     });
 });
