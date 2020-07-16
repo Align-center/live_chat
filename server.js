@@ -3,14 +3,10 @@ var app = express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 
-app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/index.html');
-});
-
 var options = {
     dotfiles: 'ignore',
     etag: false,
-    extensions: ['htm', 'html'],
+    extensions: ['htm', 'html', 'css', 'js'],
     index: false,
     maxAge: '1d',
     redirect: false,
@@ -19,7 +15,7 @@ var options = {
     }   
 }
 
-app.use(express.static('public', options));
+app.use(express.static('public'));
   
 io.on('connection', (socket) => {
     console.log('a user connected');
